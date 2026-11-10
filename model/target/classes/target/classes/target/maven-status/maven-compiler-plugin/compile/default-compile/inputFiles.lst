@@ -1,0 +1,15 @@
+/home/pasq/src/ub/ds/p2/model/src/main/java/edu/ub/ds2526/anotub/model/AnotUB.java
+/home/pasq/src/ub/ds/p2/model/src/main/java/edu/ub/ds2526/anotub/model/Anotadora.java
+/home/pasq/src/ub/ds/p2/model/src/main/java/edu/ub/ds2526/anotub/model/Camps.java
+/home/pasq/src/ub/ds/p2/model/src/main/java/edu/ub/ds2526/anotub/model/CarteraAnotadores.java
+/home/pasq/src/ub/ds/p2/model/src/main/java/edu/ub/ds2526/anotub/model/CompteBancari.java
+/home/pasq/src/ub/ds/p2/model/src/main/java/edu/ub/ds2526/anotub/model/Expertesa.java
+/home/pasq/src/ub/ds/p2/model/src/main/java/edu/ub/ds2526/anotub/model/InformacioContacte.java
+/home/pasq/src/ub/ds/p2/model/src/main/java/edu/ub/ds2526/anotub/model/Passaport.java
+/home/pasq/src/ub/ds/p2/model/src/main/java/edu/ub/ds2526/anotub/model/PoliticaContrasenya.java
+/home/pasq/src/ub/ds/p2/model/src/main/java/edu/ub/ds2526/anotub/model/excepcions/AnotUBException.java
+/home/pasq/src/ub/ds/p2/model/src/main/java/edu/ub/ds2526/anotub/model/excepcions/AnotadoraNoExistentException.java
+/home/pasq/src/ub/ds/p2/model/src/main/java/edu/ub/ds2526/anotub/model/excepcions/AtributFaltantException.java
+/home/pasq/src/ub/ds/p2/model/src/main/java/edu/ub/ds2526/anotub/model/excepcions/ContrasenyaIncorrectaException.java
+/home/pasq/src/ub/ds/p2/model/src/main/java/edu/ub/ds2526/anotub/model/excepcions/ContrasenyaNoSeguraException.java
+/home/pasq/src/ub/ds/p2/model/src/main/java/edu/ub/ds2526/anotub/model/excepcions/NomUsuariJaExistentException.java

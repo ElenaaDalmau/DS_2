@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="RunCucumberTests" time="0.477" tests="21" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="25"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/pasq/src/ub/ds/p2/bdd-test/target/test-classes:/home/pasq/src/ub/ds/p2/bdd-test/target/classes:/home/pasq/src/ub/ds/p2/controlador/target/classes:/home/pasq/src/ub/ds/p2/model/target/classes:/home/pasq/.m2/repository/io/cucumber/cucumber-java/7.18.0/cucumber-java-7.18.0.jar:/home/pasq/.m2/repository/io/cucumber/cucumber-core/7.18.0/cucumber-core-7.18.0.jar:/home/pasq/.m2/repository/io/cucumber/cucumber-gherkin/7.18.0/cucumber-gherkin-7.18.0.jar:/home/pasq/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.18.0/cucumber-gherkin-messages-7.18.0.jar:/home/pasq/.m2/repository/io/cucumber/gherkin/28.0.0/gherkin-28.0.0.jar:/home/pasq/.m2/repository/io/cucumber/messages/24.1.0/messages-24.1.0.jar:/home/pasq/.m2/repository/io/cucumber/testng-xml-formatter/0.1.0/testng-xml-formatter-0.1.0.jar:/home/pasq/.m2/repository/io/cucumber/query/12.2.0/query-12.2.0.jar:/home/pasq/.m2/repository/io/cucumber/tag-expressions/6.1.0/tag-expressions-6.1.0.jar:/home/pasq/.m2/repository/io/cucumber/cucumber-expressions/17.1.0/cucumber-expressions-17.1.0.jar:/home/pasq/.m2/repository/io/cucumber/datatable/7.18.0/datatable-7.18.0.jar:/home/pasq/.m2/repository/io/cucumber/cucumber-plugin/7.18.0/cucumber-plugin-7.18.0.jar:/home/pasq/.m2/repository/io/cucumber/docstring/7.18.0/docstring-7.18.0.jar:/home/pasq/.m2/repository/io/cucumber/html-formatter/21.3.1/html-formatter-21.3.1.jar:/home/pasq/.m2/repository/io/cucumber/junit-xml-formatter/0.4.0/junit-xml-formatter-0.4.0.jar:/home/pasq/.m2/repository/io/cucumber/ci-environment/10.0.1/ci-environment-10.0.1.jar:/home/pasq/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/pasq/.m2/repository/io/cucumber/cucumber-picocontainer/7.18.0/cucumber-picocontainer-7.18.0.jar:/home/pasq/.m2/repository/org/picocontainer/picocontainer/2.15/picocontainer-2.15.jar:/home/pasq/.m2/repository/io/cucumber/cucumber-junit-platform-engine/7.18.0/cucumber-junit-platform-engine-7.18.0.jar:/home/pasq/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/home/pasq/.m2/repository/org/junit/platform/junit-platform-suite/1.10.2/junit-platform-suite-1.10.2.jar:/home/pasq/.m2/repository/org/junit/platform/junit-platform-suite-api/1.10.2/junit-platform-suite-api-1.10.2.jar:/home/pasq/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.10.2/junit-platform-suite-engine-1.10.2.jar:/home/pasq/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.10.2/junit-platform-suite-commons-1.10.2.jar:/home/pasq/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/home/pasq/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/pasq/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/home/pasq/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.2/junit-platform-launcher-1.10.2.jar:/home/pasq/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:"/>
+    <property name="java.vm.vendor" value="JetBrains s.r.o."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://www.jetbrains.com/"/>
+    <property name="user.timezone" value="Europe/Madrid"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="25"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/home/pasq/src/ub/ds/idea/jbr/lib"/>
+    <property name="sun.java.command" value="/home/pasq/src/ub/ds/p2/bdd-test/target/surefire/surefirebooter-20261006183532742_3.jar /home/pasq/src/ub/ds/p2/bdd-test/target/surefire 2026-10-06T18-35-31_774-jvmRun1 surefire-20261006183532742_1tmp surefire_0-20261006183532742_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/pasq/src/ub/ds/p2/bdd-test/target/test-classes:/home/pasq/src/ub/ds/p2/bdd-test/target/classes:/home/pasq/src/ub/ds/p2/controlador/target/classes:/home/pasq/src/ub/ds/p2/model/target/classes:/home/pasq/.m2/repository/io/cucumber/cucumber-java/7.18.0/cucumber-java-7.18.0.jar:/home/pasq/.m2/repository/io/cucumber/cucumber-core/7.18.0/cucumber-core-7.18.0.jar:/home/pasq/.m2/repository/io/cucumber/cucumber-gherkin/7.18.0/cucumber-gherkin-7.18.0.jar:/home/pasq/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.18.0/cucumber-gherkin-messages-7.18.0.jar:/home/pasq/.m2/repository/io/cucumber/gherkin/28.0.0/gherkin-28.0.0.jar:/home/pasq/.m2/repository/io/cucumber/messages/24.1.0/messages-24.1.0.jar:/home/pasq/.m2/repository/io/cucumber/testng-xml-formatter/0.1.0/testng-xml-formatter-0.1.0.jar:/home/pasq/.m2/repository/io/cucumber/query/12.2.0/query-12.2.0.jar:/home/pasq/.m2/repository/io/cucumber/tag-expressions/6.1.0/tag-expressions-6.1.0.jar:/home/pasq/.m2/repository/io/cucumber/cucumber-expressions/17.1.0/cucumber-expressions-17.1.0.jar:/home/pasq/.m2/repository/io/cucumber/datatable/7.18.0/datatable-7.18.0.jar:/home/pasq/.m2/repository/io/cucumber/cucumber-plugin/7.18.0/cucumber-plugin-7.18.0.jar:/home/pasq/.m2/repository/io/cucumber/docstring/7.18.0/docstring-7.18.0.jar:/home/pasq/.m2/repository/io/cucumber/html-formatter/21.3.1/html-formatter-21.3.1.jar:/home/pasq/.m2/repository/io/cucumber/junit-xml-formatter/0.4.0/junit-xml-formatter-0.4.0.jar:/home/pasq/.m2/repository/io/cucumber/ci-environment/10.0.1/ci-environment-10.0.1.jar:/home/pasq/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/pasq/.m2/repository/io/cucumber/cucumber-picocontainer/7.18.0/cucumber-picocontainer-7.18.0.jar:/home/pasq/.m2/repository/org/picocontainer/picocontainer/2.15/picocontainer-2.15.jar:/home/pasq/.m2/repository/io/cucumber/cucumber-junit-platform-engine/7.18.0/cucumber-junit-platform-engine-7.18.0.jar:/home/pasq/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/home/pasq/.m2/repository/org/junit/platform/junit-platform-suite/1.10.2/junit-platform-suite-1.10.2.jar:/home/pasq/.m2/repository/org/junit/platform/junit-platform-suite-api/1.10.2/junit-platform-suite-api-1.10.2.jar:/home/pasq/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.10.2/junit-platform-suite-engine-1.10.2.jar:/home/pasq/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.10.2/junit-platform-suite-commons-1.10.2.jar:/home/pasq/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/home/pasq/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/pasq/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/home/pasq/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.2/junit-platform-launcher-1.10.2.jar:/home/pasq/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/pasq"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-07-21"/>
+    <property name="java.home" value="/home/pasq/src/ub/ds/idea/jbr"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/pasq/src/ub/ds/p2/bdd-test"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="intellij.os.virtualization" value="none"/>
+    <property name="jbr.virtualization.information" value="No virtualization detected"/>
+    <property name="surefire.real.class.path" value="/home/pasq/src/ub/ds/p2/bdd-test/target/surefire/surefirebooter-20261006183532742_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="25.0.4+1-b508.27"/>
+    <property name="user.name" value="pasq"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="awt.toolkit.name" value="XToolkit"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.12.107+deb13-amd64"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="JBR-25.0.4+1-508.27-nomod"/>
+    <property name="localRepository" value="/home/pasq/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://youtrack.jetbrains.com/issues/JBR"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="25.0.4"/>
+    <property name="user.dir" value="/home/pasq/src/ub/ds/p2/bdd-test"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="JetBrains s.r.o."/>
+    <property name="java.vm.version" value="25.0.4+1-b508.27"/>
+    <property name="stdin.encoding" value="UTF-8"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="69.0"/>
+  </properties>
+  <testcase name="L&apos;usuari demana registrar-se amb dades vàlides" classname="US1 - Registre d&apos;usuari" time="0.094">
+    <system-out><![CDATA[
+Scenario: L'usuari demana registrar-se amb dades vàlides                 &amp#27;[90m# features/US1-registre-usuari.feature:6&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m no està registrat&amp#27;[0m                            &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_no_està_registrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mun usuari demana registrar-se amb les dades següents:&amp#27;[0m             &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.un_usuari_demana_registrar_se_amb_les_dades_següents(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | nomUsuari | contrasenya | passaportNom | passaportCognoms | passaportPais | passaportNumero | passaportCaducitat | compteIban               | compteSwift | email            | telèfon   | experteses           |
+    | john_doe  | Password123 | John         | Doe              | ESP           | ABC123456       | 2030-12-31         | ES9121000418450200051332 | CAIXESBBXXX | john@example.com | 600123123 | Java; Bases de dades |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"L'usuari s'ha registrat amb èxit."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m està registrat&amp#27;[0m                                 &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_està_registrat(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="L&apos;usuari demana registrar-se amb un nom d&apos;usuari ja registrat" classname="US1 - Registre d&apos;usuari" time="0.003">
+    <system-out><![CDATA[
+Scenario: L'usuari demana registrar-se amb un nom d'usuari ja registrat                                        &amp#27;[90m# features/US1-registre-usuari.feature:36&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m ja està registrat&amp#27;[0m                                                                  &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.lUsuariJaEstaRegistrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mun usuari demana registrar-se amb les dades següents:&amp#27;[0m                                                   &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.un_usuari_demana_registrar_se_amb_les_dades_següents(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | nomUsuari | contrasenya | passaportNom | passaportCognoms | passaportPais | passaportNumero | passaportCaducitat | compteIban               | compteSwift | email            | telèfon   | experteses           |
+    | john_doe  | Password123 | John         | Doe              | ESP           | ABC123456       | 2030-12-31         | ES9121000418450200051332 | CAIXESBBXXX | john@example.com | 600123123 | Java; Bases de dades |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"No s'ha pogut registrar l'usuari. Ja existeix un usuari amb aquest nom."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.1" classname="Examples" time="0.014">
+    <system-out><![CDATA[
+Scenario Outline: L'usuari demana registrar-se no proporcionant les dades necessàries                            &amp#27;[90m# features/US1-registre-usuari.feature:23&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m""&amp#27;[0m&amp#27;[32m no està registrat&amp#27;[0m                                                                            &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_no_està_registrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mun usuari demana registrar-se amb les dades següents:&amp#27;[0m                                                     &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.un_usuari_demana_registrar_se_amb_les_dades_següents(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | nomUsuari | contrasenya | passaportNom | passaportCognoms | passaportPais | passaportNumero | passaportCaducitat | compteIban               | compteSwift | email            | telèfon   | experteses           |
+    | [empty]   | Password123 | John         | Doe              | ESP           | ABC123456       | 2030-12-31         | ES9121000418450200051332 | CAIXESBBXXX | john@example.com | 600123123 | Java; Bases de dades |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"L'usuari no s'ha pogut registrar perquè hi faltava l'atribut 'nomUsuari'."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.1" classname="Examples" time="0.004">
+    <system-out><![CDATA[
+Scenario Outline: L'usuari demana registrar-se amb una contrasenya poc segura                                    &amp#27;[90m# features/US1-registre-usuari.feature:52&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m no està registrat&amp#27;[0m                                                                    &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_no_està_registrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mun usuari demana registrar-se amb les dades següents:&amp#27;[0m                                                     &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.un_usuari_demana_registrar_se_amb_les_dades_següents(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | nomUsuari | contrasenya | passaportNom | passaportCognoms | passaportPais | passaportNumero | passaportCaducitat | compteIban               | compteSwift | email            | telèfon   | experteses           |
+    | john_doe  | Pass1       | John         | Doe              | ESP           | ABC123456       | 2030-12-31         | ES9121000418450200051332 | CAIXESBBXXX | john@example.com | 600123123 | Java; Bases de dades |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"L'usuari no s'ha pogut registrar perquè la contrasenya no és prou segura."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.2" classname="Examples" time="0.005">
+    <system-out><![CDATA[
+Scenario Outline: L'usuari demana registrar-se no proporcionant les dades necessàries                              &amp#27;[90m# features/US1-registre-usuari.feature:24&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m no està registrat&amp#27;[0m                                                                      &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_no_està_registrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mun usuari demana registrar-se amb les dades següents:&amp#27;[0m                                                       &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.un_usuari_demana_registrar_se_amb_les_dades_següents(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | nomUsuari | contrasenya | passaportNom | passaportCognoms | passaportPais | passaportNumero | passaportCaducitat | compteIban               | compteSwift | email            | telèfon   | experteses           |
+    | john_doe  | [empty]     | John         | Doe              | ESP           | ABC123456       | 2030-12-31         | ES9121000418450200051332 | CAIXESBBXXX | john@example.com | 600123123 | Java; Bases de dades |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"L'usuari no s'ha pogut registrar perquè hi faltava l'atribut 'contrasenya'."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.2" classname="Examples" time="0.004">
+    <system-out><![CDATA[
+Scenario Outline: L'usuari demana registrar-se amb una contrasenya poc segura                                    &amp#27;[90m# features/US1-registre-usuari.feature:53&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m no està registrat&amp#27;[0m                                                                    &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_no_està_registrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mun usuari demana registrar-se amb les dades següents:&amp#27;[0m                                                     &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.un_usuari_demana_registrar_se_amb_les_dades_següents(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | nomUsuari | contrasenya | passaportNom | passaportCognoms | passaportPais | passaportNumero | passaportCaducitat | compteIban               | compteSwift | email            | telèfon   | experteses           |
+    | john_doe  | password123 | John         | Doe              | ESP           | ABC123456       | 2030-12-31         | ES9121000418450200051332 | CAIXESBBXXX | john@example.com | 600123123 | Java; Bases de dades |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"L'usuari no s'ha pogut registrar perquè la contrasenya no és prou segura."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.3" classname="Examples" time="0.004">
+    <system-out><![CDATA[
+Scenario Outline: L'usuari demana registrar-se no proporcionant les dades necessàries                               &amp#27;[90m# features/US1-registre-usuari.feature:25&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m no està registrat&amp#27;[0m                                                                       &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_no_està_registrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mun usuari demana registrar-se amb les dades següents:&amp#27;[0m                                                        &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.un_usuari_demana_registrar_se_amb_les_dades_següents(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | nomUsuari | contrasenya | passaportNom | passaportCognoms | passaportPais | passaportNumero | passaportCaducitat | compteIban               | compteSwift | email            | telèfon   | experteses           |
+    | john_doe  | Password123 | [empty]      | Doe              | ESP           | ABC123456       | 2030-12-31         | ES9121000418450200051332 | CAIXESBBXXX | john@example.com | 600123123 | Java; Bases de dades |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"L'usuari no s'ha pogut registrar perquè hi faltava l'atribut 'passaportNom'."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.3" classname="Examples" time="0.003">
+    <system-out><![CDATA[
+Scenario Outline: L'usuari demana registrar-se amb una contrasenya poc segura                                    &amp#27;[90m# features/US1-registre-usuari.feature:54&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m no està registrat&amp#27;[0m                                                                    &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_no_està_registrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mun usuari demana registrar-se amb les dades següents:&amp#27;[0m                                                     &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.un_usuari_demana_registrar_se_amb_les_dades_següents(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | nomUsuari | contrasenya | passaportNom | passaportCognoms | passaportPais | passaportNumero | passaportCaducitat | compteIban               | compteSwift | email            | telèfon   | experteses           |
+    | john_doe  | PASSWORD123 | John         | Doe              | ESP           | ABC123456       | 2030-12-31         | ES9121000418450200051332 | CAIXESBBXXX | john@example.com | 600123123 | Java; Bases de dades |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"L'usuari no s'ha pogut registrar perquè la contrasenya no és prou segura."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.4" classname="Examples" time="0.006">
+    <system-out><![CDATA[
+Scenario Outline: L'usuari demana registrar-se no proporcionant les dades necessàries                                   &amp#27;[90m# features/US1-registre-usuari.feature:26&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m no està registrat&amp#27;[0m                                                                           &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_no_està_registrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mun usuari demana registrar-se amb les dades següents:&amp#27;[0m                                                            &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.un_usuari_demana_registrar_se_amb_les_dades_següents(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | nomUsuari | contrasenya | passaportNom | passaportCognoms | passaportPais | passaportNumero | passaportCaducitat | compteIban               | compteSwift | email            | telèfon   | experteses           |
+    | john_doe  | Password123 | John         | [empty]          | ESP           | ABC123456       | 2030-12-31         | ES9121000418450200051332 | CAIXESBBXXX | john@example.com | 600123123 | Java; Bases de dades |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"L'usuari no s'ha pogut registrar perquè hi faltava l'atribut 'passaportCognoms'."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.4" classname="Examples" time="0.003">
+    <system-out><![CDATA[
+Scenario Outline: L'usuari demana registrar-se amb una contrasenya poc segura                                    &amp#27;[90m# features/US1-registre-usuari.feature:55&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m no està registrat&amp#27;[0m                                                                    &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_no_està_registrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mun usuari demana registrar-se amb les dades següents:&amp#27;[0m                                                     &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.un_usuari_demana_registrar_se_amb_les_dades_següents(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | nomUsuari | contrasenya | passaportNom | passaportCognoms | passaportPais | passaportNumero | passaportCaducitat | compteIban               | compteSwift | email            | telèfon   | experteses           |
+    | john_doe  | Passwordxx  | John         | Doe              | ESP           | ABC123456       | 2030-12-31         | ES9121000418450200051332 | CAIXESBBXXX | john@example.com | 600123123 | Java; Bases de dades |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"L'usuari no s'ha pogut registrar perquè la contrasenya no és prou segura."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.5" classname="Examples" time="0.011">
+    <system-out><![CDATA[
+Scenario Outline: L'usuari demana registrar-se no proporcionant les dades necessàries                                &amp#27;[90m# features/US1-registre-usuari.feature:27&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m no està registrat&amp#27;[0m                                                                        &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_no_està_registrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mun usuari demana registrar-se amb les dades següents:&amp#27;[0m                                                         &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.un_usuari_demana_registrar_se_amb_les_dades_següents(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | nomUsuari | contrasenya | passaportNom | passaportCognoms | passaportPais | passaportNumero | passaportCaducitat | compteIban               | compteSwift | email            | telèfon   | experteses           |
+    | john_doe  | Password123 | John         | Doe              | [empty]       | ABC123456       | 2030-12-31         | ES9121000418450200051332 | CAIXESBBXXX | john@example.com | 600123123 | Java; Bases de dades |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"L'usuari no s'ha pogut registrar perquè hi faltava l'atribut 'passaportPais'."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.6" classname="Examples" time="0.004">
+    <system-out><![CDATA[
+Scenario Outline: L'usuari demana registrar-se no proporcionant les dades necessàries                                  &amp#27;[90m# features/US1-registre-usuari.feature:28&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m no està registrat&amp#27;[0m                                                                          &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_no_està_registrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mun usuari demana registrar-se amb les dades següents:&amp#27;[0m                                                           &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.un_usuari_demana_registrar_se_amb_les_dades_següents(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | nomUsuari | contrasenya | passaportNom | passaportCognoms | passaportPais | passaportNumero | passaportCaducitat | compteIban               | compteSwift | email            | telèfon   | experteses           |
+    | john_doe  | Password123 | John         | Doe              | ESP           | [empty]         | 2030-12-31         | ES9121000418450200051332 | CAIXESBBXXX | john@example.com | 600123123 | Java; Bases de dades |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"L'usuari no s'ha pogut registrar perquè hi faltava l'atribut 'passaportNumero'."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.7" classname="Examples" time="0.005">
+    <system-out><![CDATA[
+Scenario Outline: L'usuari demana registrar-se no proporcionant les dades necessàries                                     &amp#27;[90m# features/US1-registre-usuari.feature:29&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m no està registrat&amp#27;[0m                                                                             &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_no_està_registrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mun usuari demana registrar-se amb les dades següents:&amp#27;[0m                                                              &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.un_usuari_demana_registrar_se_amb_les_dades_següents(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | nomUsuari | contrasenya | passaportNom | passaportCognoms | passaportPais | passaportNumero | passaportCaducitat | compteIban               | compteSwift | email            | telèfon   | experteses           |
+    | john_doe  | Password123 | John         | Doe              | ESP           | ABC123456       | [empty]            | ES9121000418450200051332 | CAIXESBBXXX | john@example.com | 600123123 | Java; Bases de dades |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"L'usuari no s'ha pogut registrar perquè hi faltava l'atribut 'passaportCaducitat'."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.8" classname="Examples" time="0.003">
+    <system-out><![CDATA[
+Scenario Outline: L'usuari demana registrar-se no proporcionant les dades necessàries                             &amp#27;[90m# features/US1-registre-usuari.feature:30&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m no està registrat&amp#27;[0m                                                                     &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_no_està_registrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mun usuari demana registrar-se amb les dades següents:&amp#27;[0m                                                      &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.un_usuari_demana_registrar_se_amb_les_dades_següents(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | nomUsuari | contrasenya | passaportNom | passaportCognoms | passaportPais | passaportNumero | passaportCaducitat | compteIban | compteSwift | email            | telèfon   | experteses           |
+    | john_doe  | Password123 | John         | Doe              | ESP           | ABC123456       | 2030-12-31         | [empty]    | CAIXESBBXXX | john@example.com | 600123123 | Java; Bases de dades |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"L'usuari no s'ha pogut registrar perquè hi faltava l'atribut 'compteIban'."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.9" classname="Examples" time="0.003">
+    <system-out><![CDATA[
+Scenario Outline: L'usuari demana registrar-se no proporcionant les dades necessàries                              &amp#27;[90m# features/US1-registre-usuari.feature:31&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m no està registrat&amp#27;[0m                                                                      &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_no_està_registrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mun usuari demana registrar-se amb les dades següents:&amp#27;[0m                                                       &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.un_usuari_demana_registrar_se_amb_les_dades_següents(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | nomUsuari | contrasenya | passaportNom | passaportCognoms | passaportPais | passaportNumero | passaportCaducitat | compteIban               | compteSwift | email            | telèfon   | experteses           |
+    | john_doe  | Password123 | John         | Doe              | ESP           | ABC123456       | 2030-12-31         | ES9121000418450200051332 | [empty]     | john@example.com | 600123123 | Java; Bases de dades |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"L'usuari no s'ha pogut registrar perquè hi faltava l'atribut 'compteSwift'."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.10" classname="Examples" time="0.003">
+    <system-out><![CDATA[
+Scenario Outline: L'usuari demana registrar-se no proporcionant les dades necessàries                        &amp#27;[90m# features/US1-registre-usuari.feature:32&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m no està registrat&amp#27;[0m                                                                &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_no_està_registrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mun usuari demana registrar-se amb les dades següents:&amp#27;[0m                                                 &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.un_usuari_demana_registrar_se_amb_les_dades_següents(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | nomUsuari | contrasenya | passaportNom | passaportCognoms | passaportPais | passaportNumero | passaportCaducitat | compteIban               | compteSwift | email   | telèfon   | experteses           |
+    | john_doe  | Password123 | John         | Doe              | ESP           | ABC123456       | 2030-12-31         | ES9121000418450200051332 | CAIXESBBXXX | [empty] | 600123123 | Java; Bases de dades |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"L'usuari no s'ha pogut registrar perquè hi faltava l'atribut 'email'."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.11" classname="Examples" time="0.008">
+    <system-out><![CDATA[
+Scenario Outline: L'usuari demana registrar-se no proporcionant les dades necessàries                          &amp#27;[90m# features/US1-registre-usuari.feature:33&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m no està registrat&amp#27;[0m                                                                  &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_no_està_registrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mun usuari demana registrar-se amb les dades següents:&amp#27;[0m                                                   &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.un_usuari_demana_registrar_se_amb_les_dades_següents(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | nomUsuari | contrasenya | passaportNom | passaportCognoms | passaportPais | passaportNumero | passaportCaducitat | compteIban               | compteSwift | email            | telèfon | experteses           |
+    | john_doe  | Password123 | John         | Doe              | ESP           | ABC123456       | 2030-12-31         | ES9121000418450200051332 | CAIXESBBXXX | john@example.com | [empty] | Java; Bases de dades |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"L'usuari no s'ha pogut registrar perquè hi faltava l'atribut 'telèfon'."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Example #1.12" classname="Examples" time="0.004">
+    <system-out><![CDATA[
+Scenario Outline: L'usuari demana registrar-se no proporcionant les dades necessàries                             &amp#27;[90m# features/US1-registre-usuari.feature:34&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m no està registrat&amp#27;[0m                                                                     &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_no_està_registrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mun usuari demana registrar-se amb les dades següents:&amp#27;[0m                                                      &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.un_usuari_demana_registrar_se_amb_les_dades_següents(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | nomUsuari | contrasenya | passaportNom | passaportCognoms | passaportPais | passaportNumero | passaportCaducitat | compteIban               | compteSwift | email            | telèfon   | experteses |
+    | john_doe  | Password123 | John         | Doe              | ESP           | ABC123456       | 2030-12-31         | ES9121000418450200051332 | CAIXESBBXXX | john@example.com | 600123123 | [empty]    |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"L'usuari no s'ha pogut registrar perquè hi faltava l'atribut 'experteses'."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="L&apos;usuari s&apos;identifica amb credencials vàlides" classname="US2 - Identificació d&apos;usuari" time="0.006">
+    <system-out><![CDATA[
+Scenario: L'usuari s'identifica amb credencials vàlides                     &amp#27;[90m# features/US2-identificacio-usuari.feature:6&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m està registrat amb la contrasenya &amp#27;[0m&amp#27;[32m&amp#27;[1m"Password123"&amp#27;[0m &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_està_registrat_amb_la_contrasenya(java.lang.String,java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32m&amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m intenta identificar-se amb la contrasenya &amp#27;[0m&amp#27;[32m&amp#27;[1m"Password123"&amp#27;[0m   &amp#27;[90m# stepdefinitions.IdentificacioUsuariStepDefs.intenta_identificar_se_amb_la_contrasenya(java.lang.String,java.lang.String)&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"Identificació correcta."&amp#27;[0m              &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="L&apos;usuari s&apos;identifica amb una contrasenya incorrecta" classname="US2 - Identificació d&apos;usuari" time="0.005">
+    <system-out><![CDATA[
+Scenario: L'usuari s'identifica amb una contrasenya incorrecta                                            &amp#27;[90m# features/US2-identificacio-usuari.feature:11&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m està registrat amb la contrasenya &amp#27;[0m&amp#27;[32m&amp#27;[1m"Password123"&amp#27;[0m                               &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_està_registrat_amb_la_contrasenya(java.lang.String,java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32m&amp#27;[0m&amp#27;[32m&amp#27;[1m"john_doe"&amp#27;[0m&amp#27;[32m intenta identificar-se amb la contrasenya &amp#27;[0m&amp#27;[32m&amp#27;[1m"ContrasenyaIncorrecta1"&amp#27;[0m                      &amp#27;[90m# stepdefinitions.IdentificacioUsuariStepDefs.intenta_identificar_se_amb_la_contrasenya(java.lang.String,java.lang.String)&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"No s'ha pogut identificar l'usuari. La contrasenya no és correcta."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Un usuari no registrat intenta identificar-se" classname="US2 - Identificació d&apos;usuari" time="0.003">
+    <system-out><![CDATA[
+Scenario: Un usuari no registrat intenta identificar-se                                                           &amp#27;[90m# features/US2-identificacio-usuari.feature:16&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ml'usuari &amp#27;[0m&amp#27;[32m&amp#27;[1m"unknown_user"&amp#27;[0m&amp#27;[32m no està registrat&amp#27;[0m                                                                 &amp#27;[90m# stepdefinitions.RegistreUsuariStepDefs.l_usuari_no_està_registrat(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32m&amp#27;[0m&amp#27;[32m&amp#27;[1m"unknown_user"&amp#27;[0m&amp#27;[32m intenta identificar-se amb la contrasenya &amp#27;[0m&amp#27;[32m&amp#27;[1m"Password123"&amp#27;[0m                                     &amp#27;[90m# stepdefinitions.IdentificacioUsuariStepDefs.intenta_identificar_se_amb_la_contrasenya(java.lang.String,java.lang.String)&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mel sistema mostra un missatge &amp#27;[0m&amp#27;[32m&amp#27;[1m"No s'ha pogut identificar l'usuari. No existeix cap usuari amb aquest nom."&amp#27;[0m &amp#27;[90m# stepdefinitions.SistemaStepDefs.elSistemaMostraUnMissatge(java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+</testsuite>
