@@ -1,0 +1,168 @@
+@startuml
+
+top to bottom direction
+
+class AnotUB {
+  - anotadores: CarteraAnotadores
+  + registrarAnotadora(String, String, String, String, String, String, LocalDate, String, String, String, String, List<String>): void
+  + identificarAnotadora(String, String): void
+  + estaAnotadoraRegistrada(String): boolean
+  + eliminarAnotadora(String): boolean
+}
+class AnotUBException
+class Anotadora {
+  - compteBancari: CompteBancari
+  - nomUsuari: String
+  - contrasenya: Contrassenya
+  - contacte: InformacioContacte
+  - passaport: Passaport
+  - experteses: List<Expertesa>
+  + getNomUsuari(): String
+  + contrasenyaCorrecta(String): boolean
+}
+class AnotadoraNoExistentException
+class AppContainer {
+  - controlador: Controlador
+  - anotUB: AnotUB
+  + getControlador(): Controlador
+  + getAnotUB(): AnotUB
+}
+class AtributFaltantException {
+  - atribut: String
+  + getAtribut(): String
+}
+class Camps {
+  ~ exigir(Object, String): void
+  ~ exigirLlista(List<String>, String): void
+  ~ exigir(String, String): void
+  ~ esBuit(String): boolean
+}
+class CarteraAnotadores {
+  - anotadores: List<Anotadora>
+  + eliminar(String): boolean
+  + obtenir(String): Anotadora
+  + existeix(String): boolean
+  + afegir(Anotadora): void
+  + buscar(String): Optional<Anotadora>
+}
+class CompteBancari {
+  - swift: String
+  - iban: String
+  + equals(Object): boolean
+  + hashCode(): int
+}
+class ContrasenyaIncorrectaException
+class ContrasenyaNoSeguraException
+class Contrassenya {
+  - LONGITUD_MINIMA: int
+  - contrasenya: String
+  + validar(String): void
+  + equals(String): boolean
+}
+class Controlador {
+  - anotUB: AnotUB
+  + registrarUsuari(String, String, String, String, String, String, LocalDate, String, String, String, String, List<String>): String
+  + identificarUsuari(String, String): String
+  + eliminarUsuari(String): void
+  + estaRegistrat(String): Boolean
+}
+class Expertesa {
+  - nom: String
+  + equals(Object): boolean
+  + getNom(): String
+  + toString(): String
+  + hashCode(): int
+}
+class IdentificacioUsuariStepDefs {
+  - state: WorldState
+  + intenta_identificar_se_amb_la_contrasenya(String, String): void
+}
+class InformacioContacte {
+  - telefon: String
+  - email: String
+  + equals(Object): boolean
+  + hashCode(): int
+}
+enum MessagesCAT << enumeration >> {
+  - message: String
+  + NomUsuariJaExistentException: 
+  + AnotadoraNoExistentException: 
+  + IdentificacioCorrecta: 
+  + ContrasenyaIncorrectaException: 
+  + RegistreAnotadoraCorrecte: 
+  + ContrasenyaNoSeguraException: 
+  + values(): MessagesCAT[]
+  + valueOf(String): MessagesCAT
+  + atributFaltantAnotadora(AtributFaltantException): String
+  + translate(Exception): String
+  + getMessage(): String
+}
+class NomUsuariJaExistentException
+class Passaport {
+  - numero: String
+  - nom: String
+  - dataCaducitat: LocalDate
+  - cognoms: String
+  - paisExpedicio: String
+  + equals(Object): boolean
+  + hashCode(): int
+}
+class RegistreUsuariStepDefs {
+  - state: WorldState
+  + un_usuari_demana_registrar_se_amb_les_dades_següents(DataTable): void
+  + l_usuari_està_registrat(String): void
+  - parseData(String): LocalDate
+  + l_usuari_no_està_registrat(String): void
+  - registrar(String, String): void
+  - partirLlista(String): List<String>
+  + lUsuariJaEstaRegistrat(String): void
+  + l_usuari_està_registrat_amb_la_contrasenya(String, String): void
+}
+class RunCucumberTests
+class SistemaStepDefs {
+  - state: WorldState
+  + elSistemaMostraUnMissatge(String): void
+}
+class WorldState {
+  - controlador: Controlador
+  - resultat: String
+  + getResultat(): String
+  + setResultat(String): void
+  + getControlador(): Controlador
+}
+
+AnotUB                          -[#595959,dashed]->  Anotadora                      : "«create»"
+AnotUB                          -[#595959,dashed]->  CarteraAnotadores              : "«create»"
+AnotUB                         "1" *-[#595959,plain]-> "anotadores\n1" CarteraAnotadores              
+AnotUB                          -[#595959,dashed]->  ContrasenyaIncorrectaException : "«create»"
+AnotUB                          -[#595959,dashed]->  NomUsuariJaExistentException   : "«create»"
+Anotadora                       -[#595959,dashed]->  CompteBancari                  : "«create»"
+Anotadora                      "1" *-[#595959,plain]-> "compteBancari\n1" CompteBancari                  
+Anotadora                      "1" *-[#595959,plain]-> "contrasenya\n1" Contrassenya                   
+Anotadora                       -[#595959,dashed]->  Contrassenya                   : "«create»"
+Anotadora                      "1" *-[#595959,plain]-> "experteses\n*" Expertesa                      
+Anotadora                      "1" *-[#595959,plain]-> "contacte\n1" InformacioContacte             
+Anotadora                       -[#595959,dashed]->  InformacioContacte             : "«create»"
+Anotadora                      "1" *-[#595959,plain]-> "passaport\n1" Passaport                      
+Anotadora                       -[#595959,dashed]->  Passaport                      : "«create»"
+AnotadoraNoExistentException    -[#000082,plain]-^  AnotUBException                
+AppContainer                   "1" *-[#595959,plain]-> "anotUB\n1" AnotUB                         
+AppContainer                    -[#595959,dashed]->  AnotUB                         : "«create»"
+AppContainer                   "1" *-[#595959,plain]-> "controlador\n1" Controlador                    
+AppContainer                    -[#595959,dashed]->  Controlador                    : "«create»"
+AtributFaltantException         -[#000082,plain]-^  AnotUBException                
+Camps                           -[#595959,dashed]->  AtributFaltantException        : "«create»"
+CarteraAnotadores              "1" *-[#595959,plain]-> "anotadores\n*" Anotadora                      
+CarteraAnotadores               -[#595959,dashed]->  NomUsuariJaExistentException   : "«create»"
+ContrasenyaIncorrectaException  -[#000082,plain]-^  AnotUBException                
+ContrasenyaNoSeguraException    -[#000082,plain]-^  AnotUBException                
+Contrassenya                    -[#595959,dashed]->  ContrasenyaNoSeguraException   : "«create»"
+Controlador                    "1" *-[#595959,plain]-> "anotUB\n1" AnotUB                         
+Controlador                     -[#595959,dashed]->  AnotUB                         : "«create»"
+IdentificacioUsuariStepDefs    "1" *-[#595959,plain]-> "state\n1" WorldState                     
+NomUsuariJaExistentException    -[#000082,plain]-^  AnotUBException                
+RegistreUsuariStepDefs         "1" *-[#595959,plain]-> "state\n1" WorldState                     
+SistemaStepDefs                "1" *-[#595959,plain]-> "state\n1" WorldState                     
+WorldState                      -[#595959,dashed]->  AppContainer                   : "«create»"
+WorldState                     "1" *-[#595959,plain]-> "controlador\n1" Controlador                    
+@enduml

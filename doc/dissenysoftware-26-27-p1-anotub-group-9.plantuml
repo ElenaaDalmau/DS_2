@@ -1,0 +1,284 @@
+@startuml
+
+top to bottom direction
+
+class AnotacioDadaAmbEtiquetesStepDefs {
+  - state: WorldState
+  + seleccionaLaDadaPerAnotarLaEtiquetaGlobal(String, String, String): void
+  + seleccionaLaDadaPerAnotarLesEtiquetesGlobalsI(String, String, String, String): void
+  + intentaAssignarIElSistemaResponAmb(String): void
+  + seleccionaLaDadaPerAnotarLaEtiquetaDeLocalitzacio(String, String, String): void
+  + intentaAssignarFuncionaILlenca(String): void
+  + assignaLesEtiquetesGlobals(): void
+  + anotadorAmbLaDExpertesaAmb(String, String, String, String, String): void
+  + seleccionaIntentaAnotarDuesEtGlobalsIUnaDeLocalitzacio(String, String, String, String, String): void
+  + assignaLaEtiquetaGlobalA(String, String, String): void
+}
+class Anotadora {
+  - passaportPais: String
+  - passaportCognoms: String
+  - telefon: String
+  - passaportNom: String
+  - contrasenya: String
+  - passaportNumero: String
+  - compteSwift: String
+  - passaportCaducitat: LocalDate
+  - email: String
+  - nomUsuari: String
+  - compteIban: String
+  - experteses: List<String>
+  + getNomUsuari(): String
+  + getPassaportNumero(): String
+  + getCompteSwift(): String
+  + getPassaportNom(): String
+  + getCompteIban(): String
+  + getEmail(): String
+  + getPassaportCaducitat(): LocalDate
+  + getExperteses(): List<String>
+  + getPassaportPais(): String
+  + getTelefon(): String
+  + getContrasenya(): String
+  + getPassaportCognoms(): String
+}
+class Anotadora {
+  - compteSwift: String
+  - passaportNumero: String
+  - experteses: List<String>
+  - passaportNom: String
+  - passaportCaducitat: LocalDate
+  - telefon: String
+  - nomUsuari: String
+  - compteIban: String
+  - contrasenya: String
+  - email: String
+  - passaportPais: String
+  - passaportCognoms: String
+  + getContrasenya(): String
+  + getPassaportCaducitat(): LocalDate
+  + getCompteSwift(): String
+  + getEmail(): String
+  + getCompteIban(): String
+  + getPassaportCognoms(): String
+  + getNomUsuari(): String
+  + getPassaportPais(): String
+  + getPassaportNumero(): String
+  + getPassaportNom(): String
+  + getTelefon(): String
+  + getExperteses(): List<String>
+}
+class AppContainer {
+  - controlador: Controlador
+  + getControlador(): Controlador
+}
+class AppContainer {
+  - controlador: Controlador
+  + getControlador(): Controlador
+}
+class AssignarTascaStepDefs {
+  - state: WorldState
+  + lAnotadorConsultaLesTasquesDisponibles(String): void
+  + anotadorIdentificatIHiHaUnaTascaDisponible(String, String, String, String): void
+  + elSistemaNoMostraCapTascaDisponible(): void
+  + hiHaUnaTascaCompletadaITenimUnUsuari(String, String, String): void
+  + lAnotadorIntentaAssignarSeLaTascaCompletada(String, String): void
+  + elSistemaAssignaLaTascaALAnotador(String, String): void
+  + noHiHaTasquesDisponiblesPerALAnotador(String, String): void
+  + elSistemaNoLiPermetAssignarSeLaTascaCompletada(String): void
+  + anotadorSeleccionaLaTascaDisponibleIDemanaAssignarSeLa(String, String): void
+  + laTascaDeixaDeEstarDisponiblePerALaRestaDAnotadors(String): void
+}
+class CompletarTascaStepDefs {
+  - dadaActual: Imatge
+  - tascaActual: TascaAnotacio
+  - state: WorldState
+  - dadesDisponibles: List<Imatge>
+  + laTascaContinuaComAPendentDeCompletar(String): void
+  + elSistemaMarcaLaDadaComAnotada(String): void
+  + lAnotadorTéUnaTascaAssignada(String, String, String): void
+  + nomésLiQuedaDadaPerCompletar(String): void
+  + lAnotadorTéUnaTascaAssignadaAmbDiversesDadesPerAnotar(String, String, String): void
+  + lAnotadorMarcaAquestaDadaComAnotada(String, String): void
+  + elSistemaNoLiMostraCapDadaJaQueNoTéCapTascaAssignada(): void
+  + elSistemaMarcaLaTascaComACompletada(String): void
+  + lAnotadorIntentaConsultarLesDadesDisponiblesDeLaTasca(String, String): void
+  + lAnotadorNoTéUnaTascaAssignada(String, String, String): void
+}
+class ConsultaRemuneracioTascaStepDefs {
+  - state: WorldState
+  + elSistemaNomesLoMostraLaTascaCompletaRemuneracio(String, float): void
+  + anotadorAmbLesTasquesCompletadaIAssignada(String, String, String, String, float): void
+  + consultaLaRemuneracioTotalDeAmbDadesFetesIEnConjunt(String, String, int, String): void
+  + anotadorAmbTasquesCompletades(String, String, String, String, float): void
+  + consultaLaRemuneracioTotalDuesTasquesCompletades(String, String): void
+  + elSistemaLiMostraElTotalQueSeraDe(float): void
+  + consultarLaRemuneracioTascaFeta(String, int): void
+}
+class Controlador {
+  - usuarises: List<Anotadora>
+  + eliminarUsuari(String): Boolean
+  + registrarUsuari(String, String, String, String, String, String, LocalDate, String, String, String, String, List<String>): String
+  + estaRegistrat(String): Boolean
+  - esBuit(String): boolean
+  - esContrasenyaSegura(String): boolean
+  - trobarAtributFaltant(String, String, String, String, String, String, LocalDate, String, String, String, String, List<String>): String
+  + identificarUsuari(String, String): String
+  - trobarUsuari(String): Anotadora
+}
+class Controlador {
+  - tasques: List<TascaAnotacio<?>>
+  - usuaries: List<Anotadora>
+  - trobarDocument(TascaAnotacioDocument, String): Document
+  + trobarTasquesDisponibles(String): String
+  + identificarUsuari(String, String): String
+  + afegirTascaAnotacioImatge(String, String, String, float, LocalDate, List<TipusEtiquetesCategoriques>): void
+  + assignarImatgesTasca(String, String, int, int, List<List<Integer>>): String
+  + afegirTascaCompletada(String, String, String, float, LocalDate, List<TipusEtiquetesCategoriques>): void
+  + assignarDocumentsTasca(String, String, String): String
+  + obtenirTasca(String): TascaAnotacio<?>
+  - esContrasenyaSegura(String): boolean
+  - trobaImatge(TascaAnotacioImatge, String): Imatge
+  + eliminarTasca(String): void
+  + mateixEstatTasca(EstatsTasca, String): boolean
+  + canviarEstatTasca(EstatsTasca, String): void
+  + afegirTascaAnotacioDocument(String, String, String, float, LocalDate, List<TipusEtiquetesCategoriques>): void
+  + isUsuariAsignatATasca(String, String): boolean
+  - trobarUsuari(String): Anotadora
+  + consultarRemuneracioTasquesCompletades(List<String>): String
+  + crearAssignarEtiquetaCategorica(String, TipusEtiquetesCategoriques, TascaAnotacio<?>, String): String
+  - esBuit(String): boolean
+  - trobarAtributFaltant(String, String, String, String, String, String, LocalDate, String, String, String, String, List<String>): String
+  + completarDadesTasca(String, int): void
+  + registrarUsuari(String, String, String, String, String, String, LocalDate, String, String, String, String, List<String>): String
+  + assignarTascaAAnotadora(String, String): String
+  - trobarTasca(String): TascaAnotacio<?>
+  + eliminarUsuari(String): Boolean
+  + estaRegistrat(String): Boolean
+  + consultarDadesDisponiblesDeTasca(String, String): List<Imatge>
+}
+class Dada {
+  - tascaAsociada: TascaAnotacio<?>
+  - titol: String
+  - etiquetes: List<EtiquetesCategoriques>
+  - anotada: boolean
+  + getEtiquetes(): List<EtiquetesCategoriques>
+  + addEtiquetes(List<EtiquetesCategoriques>): void
+  + isAnotada(): boolean
+  + setEtiquetes(List<EtiquetesCategoriques>): void
+  + getTitol(): String
+  + setAnotada(boolean): void
+  + addEtiqueta(EtiquetesCategoriques): void
+  + getTascaAsociada(): TascaAnotacio<?>
+}
+class Document {
+  - document: String
+  + getDocument(): String
+}
+class EtiquetesCategoriques {
+  - nom: String
+  - tipus: TipusEtiquetesCategoriques
+  + getNom(): String
+  + getTipus(): TipusEtiquetesCategoriques
+}
+class IdentificacioUsuariStepDefs {
+  - state: WorldState
+  + intenta_identificar_se_amb_la_contrasenya(String, String): void
+}
+class Imatge {
+  - pixels: List<List<Integer>>
+  - amplada: int
+  - alcada: int
+  + getPixels(): List<List<Integer>>
+  + setPixels(List<List<Integer>>): void
+  + getAlcada(): int
+  + getAmplada(): int
+}
+class LocalitzacioObjecte
+class RegistreUsuariStepDefs {
+  - state: WorldState
+  + l_usuari_ja_està_registrat(String): void
+  + l_usuari_no_està_registrat(String): void
+  + l_usuari_està_registrat(String): void
+  + l_usuari_està_registrat_amb_la_contrasenya(String, String): void
+  + un_usuari_demana_registrar_se_amb_les_dades_següents(DataTable): void
+}
+class RunCucumberTests
+class SistemaStepDefs {
+  - state: WorldState
+  + elSistemaMostraUnMissatge(String): void
+}
+class TascaAnotacio<T> {
+  - remuneracio: float
+  - remuneracioPerDada: float
+  - anotadoraAsignada: Anotadora
+  - estatTasca: EstatsTasca
+  - dadesFetes: List<T>
+  - etiquetesPermeses: List<TipusEtiquetesCategoriques>
+  - instrucions: String
+  - expertesaRequerida: String
+  - dataLimit: LocalDate
+  - dadesPendents: List<T>
+  - titol: String
+  + toString(): String
+  + getEstatTasca(): EstatsTasca
+  + getEtiquetesPermeses(): List<TipusEtiquetesCategoriques>
+  + setRemuneracio(float): void
+  + ferDada(T): void
+  + getTitol(): String
+  + getAnotadoraAsignada(): Anotadora
+  + isTascaDisponible(): boolean
+  + getRemuneracioPerDada(): float
+  + setAnotadoraAsignada(Anotadora): void
+  + setEstatTasca(EstatsTasca): void
+  + getRemuneracio(): float
+  + getDadesPendents(): List<T>
+  + setDadesFetes(List<T>): void
+  + assignarAnotadora(Anotadora): void
+  + setDadesPendents(List<T>): void
+  + getExpertesaRequerida(): String
+  + getDataLimit(): LocalDate
+  + getDadesFetes(): List<T>
+  + addDadesPendents(T): void
+  + getInstrucions(): String
+  + avaluarEstatTasca(): void
+}
+class TascaAnotacioDocument
+class TascaAnotacioImatge
+class TasquesDisponiblesAnotadorsStepDefs {
+  - state: WorldState
+  + cap_tasca_no_acabada_disponible(String, String): void
+  + l_anotador_veu_les_tasques_disponibles(String): void
+  + l_anotador_amb_expertesa(String, String, String): void
+  + cap_tasca_pendent_disponible(String, String): void
+  + cap_tasca_amb_expertesa_disponible(String, String): void
+  + l_anotador_consulta_les_tasques_disponibles(String): void
+}
+class WorldState {
+  + resultat: String
+  + controlador: Controlador
+  + setResultat(String): void
+  + getResultat(): String
+  + getControlador(): Controlador
+}
+
+AnotacioDadaAmbEtiquetesStepDefs    "1" *-[#595959,plain]-> "state\n1" WorldState                          
+AppContainer                        "1" *-[#595959,plain]-> "controlador\n1" Controlador                         
+AssignarTascaStepDefs               "1" *-[#595959,plain]-> "state\n1" WorldState                          
+CompletarTascaStepDefs              "1" *-[#595959,plain]-> "dadesDisponibles\n*" Imatge                              
+CompletarTascaStepDefs              "1" *-[#595959,plain]-> "tascaActual\n1" TascaAnotacio                       
+CompletarTascaStepDefs              "1" *-[#595959,plain]-> "state\n1" WorldState                          
+ConsultaRemuneracioTascaStepDefs    "1" *-[#595959,plain]-> "state\n1" WorldState                          
+Controlador                         "1" *-[#595959,plain]-> "usuaries\n*" Anotadora                           
+Controlador                         "1" *-[#595959,plain]-> "tasques\n*" TascaAnotacio                       
+Dada                                "1" *-[#595959,plain]-> "etiquetes\n*" EtiquetesCategoriques               
+Dada                                "1" *-[#595959,plain]-> "tascaAsociada\n1" TascaAnotacio                       
+Document                             -[#000082,plain]-^  Dada                                
+IdentificacioUsuariStepDefs         "1" *-[#595959,plain]-> "state\n1" WorldState                          
+Imatge                               -[#000082,plain]-^  Dada                                
+RegistreUsuariStepDefs              "1" *-[#595959,plain]-> "state\n1" WorldState                          
+SistemaStepDefs                     "1" *-[#595959,plain]-> "state\n1" WorldState                          
+TascaAnotacio                       "1" *-[#595959,plain]-> "anotadoraAsignada\n1" Anotadora                           
+TascaAnotacioDocument                -[#000082,plain]-^  TascaAnotacio                       
+TascaAnotacioImatge                  -[#000082,plain]-^  TascaAnotacio                       
+TasquesDisponiblesAnotadorsStepDefs "1" *-[#595959,plain]-> "state\n1" WorldState                          
+WorldState                          "1" *-[#595959,plain]-> "controlador\n1" Controlador                         
+@enduml
