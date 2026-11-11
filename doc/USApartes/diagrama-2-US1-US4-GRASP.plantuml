@@ -1,0 +1,514 @@
+@startuml
+
+top to bottom direction
+
+class AnotUB {
+  - MARGE_BENEFICI_PER_DEFECTE: double
+  - margeBenefici: double
+  - anotadores: CarteraAnotadores
+  - empreses: CarteraEmpreses
+  - especificacions: CatalegEspecificacions
+  - tasques: CatalegTasques
+  - assignacions: CatalegAssignacions
+  + getMargeBenefici(): double
+  + registrarAnotadora(String, String, String, String, String, String, LocalDate, String, String, String, String, List<String>): void
+  + registrarEmpresa(String, String, String, String, String, String, String): void
+  - existeixUsuari(String): boolean
+  + identificarAnotadora(String, String): void
+  + estaAnotadoraRegistrada(String): boolean
+  + estaEmpresaRegistrada(String): boolean
+  + eliminarAnotadora(String): boolean
+  + afegirExpertesaAnotadora(String, String): void
+  + publicarEspecificacio(String, List<String>, List<String>, List<String>, double): void
+  + estaEspecificacioPublicada(String): boolean
+  + registrarTascaImatges(String, String, String, LocalDate): void
+  - registrarTasca(Tasca): void
+  + afegirImatgeTasca(String, String, int, int): void
+  + obtenirTasquesDisponibles(String): List<Map<String, String>>
+  + eliminarTotesLesTasques(): void
+  + assignarTasca(String, String): void
+  + estaTascaDisponible(String): boolean
+  + estaTascaCompletada(String): boolean
+  + estaTascaAssignadaA(String, String): boolean
+  + marcarDadaAnotada(String, String, String): void
+}
+abstract class AnotUBException
+class Anotadora {
+  - passaport: Passaport
+  - compteBancari: CompteBancari
+  - experteses: List<Expertesa>
+  + getExperteses(): List<Expertesa>
+  + afegirExpertesa(Expertesa): void
+}
+class AnotadoraNoExistentException
+class AppContainer {
+  - anotUB: AnotUB
+  - controlador: Controlador
+  + getAnotUB(): AnotUB
+  + getControlador(): Controlador
+}
+class Assignacio {
+  - tasca: Tasca
+  - anotadora: Anotadora
+  - estat: EstatTasca
+  + getTasca(): Tasca
+  + getAnotadora(): Anotadora
+  + getEstat(): EstatTasca
+  + estaDisponible(): boolean
+  + estaCompletada(): boolean
+  + esDe(Anotadora): boolean
+  + estaAssignadaA(Anotadora): boolean
+  + assignarA(Anotadora): void
+  + completar(): void
+  + marcarDadaAnotada(Anotadora, String): void
+  - comprovarAssignadaA(Anotadora): void
+}
+class AssignarTascaStepDefs {
+  - state: WorldState
+  - expertesaTasca: String
+  - tasquesMostrades: List<Map<String, String>>
+  - controlador(): Controlador
+  + anotadorIdentificatIHiHaUnaTascaDisponible(String, String, String, String): void
+  + anotadorSeleccionaLaTascaDisponibleIDemanaAssignarSeLa(String, String): void
+  + elSistemaAssignaLaTascaALAnotador(String, String): void
+  + laTascaDeixaDeEstarDisponiblePerALaRestaDAnotadors(String): void
+  + noHiHaTasquesDisponiblesPerALAnotador(String, String): void
+  + lAnotadorConsultaLesTasquesDisponibles(String): void
+  + elSistemaNoMostraCapTascaDisponible(): void
+  + hiHaUnaTascaCompletadaITenimUnUsuari(String, String, String): void
+  + lAnotadorIntentaAssignarSeLaTascaCompletada(String, String): void
+  + elSistemaNoLiPermetAssignarSeLaTascaCompletada(String): void
+}
+class AtributFaltantException {
+  - atribut: String
+  + getAtribut(): String
+}
+class Camps {
+  ~ esBuit(String): boolean
+  ~ exigir(String, String): void
+  ~ exigir(Object, String): void
+  ~ exigirLlista(List<String>, String): void
+}
+class CarteraAnotadores {
+  - anotadores: List<Anotadora>
+  + buscar(String): Optional<Anotadora>
+  + obtenir(String): Anotadora
+  + existeix(String): boolean
+  + afegir(Anotadora): void
+  + eliminar(String): boolean
+  + afegirExpertesaAnotadora(String, String): void
+}
+class CarteraEmpreses {
+  - empreses: List<Empresa>
+  + buscar(String): Optional<Empresa>
+  + obtenir(String): Empresa
+  + existeix(String): boolean
+  + afegir(Empresa): void
+}
+class CatalegAssignacions {
+  - assignacions: List<Assignacio>
+  + registrarAssignacio(Assignacio): void
+  + buscarPerTasca(String): Optional<Assignacio>
+  + obtenirPerTasca(String): Assignacio
+  + hiHaAlgunaDisponible(): boolean
+  + obtenirTasquesDisponiblesPerExperteses(List<Expertesa>): List<Tasca>
+  + eliminarTotes(): void
+}
+class CatalegEspecificacions {
+  - especificacions: List<EspecificacioTasca>
+  + buscar(String): Optional<EspecificacioTasca>
+  + obtenir(String): EspecificacioTasca
+  + existeix(String): boolean
+  + afegir(EspecificacioTasca): void
+}
+class CatalegTasques {
+  - tasques: List<Tasca>
+  + buscar(String): Optional<Tasca>
+  + obtenir(String): Tasca
+  + existeix(String): boolean
+  + afegir(Tasca): void
+  + eliminar(String): boolean
+  + eliminarTotesLesTasques(): void
+}
+class Categoria {
+  - nom: String
+  + getNom(): String
+  + equals(Object): boolean
+  + hashCode(): int
+  + toString(): String
+}
+class CompteBancari {
+  - iban: String
+  - swift: String
+  + equals(Object): boolean
+  + hashCode(): int
+}
+class ContrasenyaIncorrectaException
+class ContrasenyaNoSeguraException
+class Contrassenya {
+  - LONGITUD_MINIMA: int
+  - contrasenya: String
+  + equals(String): boolean
+  + validar(String): void
+}
+class Controlador {
+  - anotUB: AnotUB
+  + registrarUsuari(String, String, String, String, String, String, LocalDate, String, String, String, String, List<String>): String
+  + estaRegistrat(String): Boolean
+  + eliminarUsuari(String): void
+  + registrarEmpresa(String, String, String, String, String, String, String): String
+  + estaEmpresaRegistrada(String): boolean
+  + identificarUsuari(String, String): String
+  + afegirExpertesaAnotador(String, String): String
+  + publicarEspecificacio(String, List<String>, List<String>, List<String>, double): String
+  + estaEspecificacioPublicada(String): boolean
+  + registrarTascaImatges(String, String, String, LocalDate): String
+  + afegirImatgeTasca(String, String, int, int): String
+  + obtenirTasquesDisponibles(String): List<Map<String, String>>
+  + eliminarTotesLesTasques(): void
+  + assignarTasca(String, String): String
+  + estaTascaDisponible(String): boolean
+  + estaTascaAssignadaA(String, String): boolean
+  + estaTascaCompletada(String): boolean
+  + marcarDadaAnotada(String, String, String): String
+}
+abstract class Dada {
+  - anotada: boolean
+  + isAnotada(): boolean
+  + marcarAnotada(): void
+}
+abstract class DadaCompleta {
+  - titol: String
+  + getTitol(): String
+  + teTitol(String): boolean
+}
+class DadaNoExistentException
+class DadesDeProva {
+  + CONTRASENYA: String
+  + EXPERTESA_GENERICA: String
+  + EMPRESA: String
+  + CATEGORIES_PER_DEFECTE: List<String>
+  - DATA_LIMIT: LocalDate
+  - AMPLADA_IMATGE: int
+  - ALCADA_IMATGE: int
+  - ANOTADORA_AUXILIAR: String
+  + registrarAnotadora(Controlador, String, String, List<String>): void
+  + registrarTascaImatges(Controlador, String, String, List<String>): void
+  + registrarTascaImatges(Controlador, String, String, List<String>, List<String>, double): void
+  + afegirImatge(Controlador, String, String): void
+  + ocuparTasca(Controlador, String): void
+  + completarTasca(Controlador, String): void
+}
+class DimensionsImatgeNoValidesException
+class Empresa {
+  - nom: String
+  - paisFiscal: String
+  - vat: String
+  + getNom(): String
+  + getPaisFiscal(): String
+  + getVat(): String
+}
+class EmpresaNoExistentException
+class EspecificacioJaExistentException
+class EspecificacioNoExistentException
+class EspecificacioTasca {
+  - titol: String
+  - experteses: List<Expertesa>
+  - categories: List<Categoria>
+  - instruccions: List<Instruccio>
+  - remuneracioPerDada: double
+  + getTitol(): String
+  + teTitol(String): boolean
+  + getExpertesesRequerides(): List<Expertesa>
+  + requereix(Expertesa): boolean
+  + getCategories(): List<Categoria>
+  + getInstruccions(): List<Instruccio>
+}
+abstract class EstatTasca {
+  + esDisponible(): boolean
+  + esAssignada(): boolean
+  + esCompletada(): boolean
+  + assignar(): EstatTasca
+  + completar(): EstatTasca
+}
+class Expertesa {
+  - nom: String
+  + getNom(): String
+  + equals(Object): boolean
+  + hashCode(): int
+  + toString(): String
+}
+class IdentificacioUsuariStepDefs {
+  - state: WorldState
+  + intenta_identificar_se_amb_la_contrasenya(String, String): void
+}
+class Imatge {
+  - amplada: int
+  - alcada: int
+  - pixels: List<Pixel>
+  + getAmplada(): int
+  + getAlcada(): int
+  + getPixels(): List<Pixel>
+}
+class InformacioContacte {
+  - email: String
+  - telefon: String
+  + equals(Object): boolean
+  + hashCode(): int
+}
+class Instruccio {
+  - textInstruccio: String
+  + getTextInstruccio(): String
+}
+enum MessagesCAT << enumeration >> {
+  - message: String
+  + NomUsuariJaExistentException: 
+  + ContrasenyaNoSeguraException: 
+  + AnotadoraNoExistentException: 
+  + ContrasenyaIncorrectaException: 
+  + RegistreAnotadoraCorrecte: 
+  + IdentificacioCorrecta: 
+  + TascaAfegidaCorrectament: 
+  + ExpertesaAfegidaCorrectament: 
+  + CapTascaDisponible: 
+  + TascaNoExistentException: 
+  + TascaJaExistentException: 
+  + TascaAssignadaCorrectament: 
+  + TascaNoDisponibleException: 
+  + TascaJaCompletadaException: 
+  + TascaNoAssignadaException: 
+  + DadaAfegidaCorrectament: 
+  + DadaNoExistentException: 
+  + DadaAnotadaCorrectament: 
+  + RegistreEmpresaCorrecte: 
+  + EmpresaNoExistentException: 
+  + EspecificacioPublicadaCorrectament: 
+  + EspecificacioJaExistentException: 
+  + EspecificacioNoExistentException: 
+  + TipusDadaIncorrecteException: 
+  + DimensionsImatgeNoValidesException: 
+  + values(): MessagesCAT[]
+  + valueOf(String): MessagesCAT
+  + getMessage(): String
+  + atributFaltantAnotadora(AtributFaltantException): String
+  + atributFaltant(AtributFaltantException): String
+  + translate(Exception): String
+}
+class NomUsuariJaExistentException
+class Passaport {
+  - nom: String
+  - cognoms: String
+  - paisExpedicio: String
+  - numero: String
+  - dataCaducitat: LocalDate
+  + equals(Object): boolean
+  + hashCode(): int
+}
+class Pixel {
+  - punt: Punt2D
+  - vermell: int
+  - verd: int
+  - blau: int
+  + getPunt(): Punt2D
+  + getVermell(): int
+  + getVerd(): int
+  + getBlau(): int
+}
+class Punt2D {
+  - x: int
+  - y: int
+  + getX(): int
+  + getY(): int
+  + equals(Object): boolean
+  + hashCode(): int
+}
+class RegistreUsuariStepDefs {
+  - state: WorldState
+  + l_usuari_no_està_registrat(String): void
+  + lUsuariJaEstaRegistrat(String): void
+  + l_usuari_està_registrat_amb_la_contrasenya(String, String): void
+  + un_usuari_demana_registrar_se_amb_les_dades_següents(DataTable): void
+  + l_usuari_està_registrat(String): void
+  - registrar(String, String): void
+  - parseData(String): LocalDate
+  - partirLlista(String): List<String>
+}
+class RunCucumberTests
+class SistemaStepDefs {
+  - state: WorldState
+  + elSistemaMostraUnMissatge(String): void
+}
+abstract class Tasca {
+  - id: String
+  - dataLimit: LocalDate
+  - especificacio: EspecificacioTasca
+  - empresa: Empresa
+  - dades: List<DadaCompleta>
+  + getId(): String
+  + getDataLimit(): LocalDate
+  + getEspecificacio(): EspecificacioTasca
+  + getEmpresa(): Empresa
+  + afegirImatge(String, int, int): void
+  # afegirDada(DadaCompleta): void
+  + satisfetaPer(List<Expertesa>): boolean
+  + mapejar(): Map<String, String>
+  + obtenirDada(String): DadaCompleta
+  + marcarDadaAnotada(String): void
+  + totesLesDadesAnotades(): boolean
+  + toString(): String
+}
+class TascaAssignada {
+  + esAssignada(): boolean
+  + assignar(): EstatTasca
+  + completar(): EstatTasca
+}
+class TascaCompletada {
+  + esCompletada(): boolean
+  + assignar(): EstatTasca
+  + completar(): EstatTasca
+}
+class TascaDisponible {
+  + esDisponible(): boolean
+  + assignar(): EstatTasca
+  + completar(): EstatTasca
+}
+class TascaImatges {
+  + afegirImatge(String, int, int): void
+}
+class TascaJaCompletadaException
+class TascaJaExistentException
+class TascaNoAssignadaException
+class TascaNoDisponibleException
+class TascaNoExistentException
+class TasquesDisponiblesStepDefs {
+  - NO_DISPONIBLE: String
+  - state: WorldState
+  - tasquesMostrades: List<Map<String, String>>
+  + te_l_expertesa(String): void
+  + hi_ha_les_seguents_tasques_disponibles_al_sistema(DataTable): void
+  + no_hi_ha_tasques_disponibles_al_sistema(): void
+  + hi_ha_les_seguents_tasques_al_sistema(DataTable): void
+  + l_anotador_demana_veure_les_tasques_disponibles(String): void
+  + el_sistema_mostra_les_seguents_tasques_disponibles_per_a_l_anotador(String, DataTable): void
+  - registrarTasca(Map<String, String>): void
+}
+class TipusDadaIncorrecteException
+abstract class Usuari {
+  - nomUsuari: String
+  - contrasenya: Contrassenya
+  - contacte: InformacioContacte
+  + getNomUsuari(): String
+  + contrasenyaCorrecta(String): boolean
+  + getContacte(): InformacioContacte
+}
+class WorldState {
+  - controlador: Controlador
+  - resultat: String
+  - usuariActual: String
+  + getControlador(): Controlador
+  + getResultat(): String
+  + setResultat(String): void
+  + getUsuariActual(): String
+  + setUsuariActual(String): void
+}
+
+AnotUB                              -[#595959,dashed]->  Anotadora                          : "«create»"
+AnotUB                              -[#595959,dashed]->  Assignacio                         : "«create»"
+AnotUB                             "1" *-[#595959,plain]-> "anotadores\n1" CarteraAnotadores
+AnotUB                              -[#595959,dashed]->  CarteraAnotadores                  : "«create»"
+AnotUB                             "1" *-[#595959,plain]-> "empreses\n1" CarteraEmpreses
+AnotUB                              -[#595959,dashed]->  CarteraEmpreses                    : "«create»"
+AnotUB                             "1" *-[#595959,plain]-> "assignacions\n1" CatalegAssignacions
+AnotUB                              -[#595959,dashed]->  CatalegAssignacions                : "«create»"
+AnotUB                             "1" *-[#595959,plain]-> "especificacions\n1" CatalegEspecificacions
+AnotUB                              -[#595959,dashed]->  CatalegEspecificacions             : "«create»"
+AnotUB                             "1" *-[#595959,plain]-> "tasques\n1" CatalegTasques
+AnotUB                              -[#595959,dashed]->  CatalegTasques                     : "«create»"
+AnotUB                              -[#595959,dashed]->  ContrasenyaIncorrectaException     : "«create»"
+AnotUB                              -[#595959,dashed]->  Empresa                            : "«create»"
+AnotUB                              -[#595959,dashed]->  EspecificacioTasca                 : "«create»"
+AnotUB                              -[#595959,dashed]->  NomUsuariJaExistentException       : "«create»"
+AnotUB                              -[#595959,dashed]->  TascaDisponible                    : "«create»"
+AnotUB                              -[#595959,dashed]->  TascaImatges                       : "«create»"
+Anotadora                          "1" *-[#595959,plain]-> "compteBancari\n1" CompteBancari
+Anotadora                           -[#595959,dashed]->  CompteBancari                      : "«create»"
+Anotadora                          "1" *-[#595959,plain]-> "experteses\n*" Expertesa
+Anotadora                          "1" *-[#595959,plain]-> "passaport\n1" Passaport
+Anotadora                           -[#595959,dashed]->  Passaport                          : "«create»"
+Anotadora                           -[#000082,plain]-^  Usuari
+AnotadoraNoExistentException        -[#000082,plain]-^  AnotUBException
+AppContainer                       "1" *-[#595959,plain]-> "anotUB\n1" AnotUB
+AppContainer                        -[#595959,dashed]->  AnotUB                             : "«create»"
+AppContainer                       "1" *-[#595959,plain]-> "controlador\n1" Controlador
+AppContainer                        -[#595959,dashed]->  Controlador                        : "«create»"
+Assignacio                         "1" *-[#595959,plain]-> "anotadora\n1" Anotadora
+Assignacio                         "1" *-[#595959,plain]-> "estat\n1" EstatTasca
+Assignacio                         "1" *-[#595959,plain]-> "tasca\n1" Tasca
+Assignacio                          -[#595959,dashed]->  TascaJaCompletadaException         : "«create»"
+Assignacio                          -[#595959,dashed]->  TascaNoAssignadaException          : "«create»"
+AssignarTascaStepDefs              "1" *-[#595959,plain]-> "state\n1" WorldState
+AtributFaltantException             -[#000082,plain]-^  AnotUBException
+Camps                               -[#595959,dashed]->  AtributFaltantException            : "«create»"
+CarteraAnotadores                  "1" *-[#595959,plain]-> "anotadores\n*" Anotadora
+CarteraAnotadores                   -[#595959,dashed]->  Expertesa                          : "«create»"
+CarteraAnotadores                   -[#595959,dashed]->  NomUsuariJaExistentException       : "«create»"
+CarteraEmpreses                    "1" *-[#595959,plain]-> "empreses\n*" Empresa
+CarteraEmpreses                     -[#595959,dashed]->  NomUsuariJaExistentException       : "«create»"
+CatalegAssignacions                "1" *-[#595959,plain]-> "assignacions\n*" Assignacio
+CatalegEspecificacions              -[#595959,dashed]->  EspecificacioJaExistentException   : "«create»"
+CatalegEspecificacions             "1" *-[#595959,plain]-> "especificacions\n*" EspecificacioTasca
+CatalegTasques                     "1" *-[#595959,plain]-> "tasques\n*" Tasca
+CatalegTasques                      -[#595959,dashed]->  TascaJaExistentException           : "«create»"
+ContrasenyaIncorrectaException      -[#000082,plain]-^  AnotUBException
+ContrasenyaNoSeguraException        -[#000082,plain]-^  AnotUBException
+Contrassenya                        -[#595959,dashed]->  ContrasenyaNoSeguraException       : "«create»"
+Controlador                        "1" *-[#595959,plain]-> "anotUB\n1" AnotUB
+Controlador                         -[#595959,dashed]->  AnotUB                             : "«create»"
+DadaCompleta                        -[#000082,plain]-^  Dada
+DadaNoExistentException             -[#000082,plain]-^  AnotUBException
+DimensionsImatgeNoValidesException  -[#000082,plain]-^  AnotUBException
+Empresa                             -[#000082,plain]-^  Usuari
+EmpresaNoExistentException          -[#000082,plain]-^  AnotUBException
+EspecificacioJaExistentException    -[#000082,plain]-^  AnotUBException
+EspecificacioNoExistentException    -[#000082,plain]-^  AnotUBException
+EspecificacioTasca                 "1" *-[#595959,plain]-> "categories\n*" Categoria
+EspecificacioTasca                 "1" *-[#595959,plain]-> "experteses\n*" Expertesa
+EspecificacioTasca                 "1" *-[#595959,plain]-> "instruccions\n*" Instruccio
+IdentificacioUsuariStepDefs        "1" *-[#595959,plain]-> "state\n1" WorldState
+Imatge                              -[#000082,plain]-^  DadaCompleta
+Imatge                              -[#595959,dashed]->  DimensionsImatgeNoValidesException : "«create»"
+Imatge                             "1" *-[#595959,plain]-> "pixels\n*" Pixel
+Imatge                              -[#595959,dashed]->  Pixel                              : "«create»"
+Imatge                              -[#595959,dashed]->  Punt2D                             : "«create»"
+NomUsuariJaExistentException        -[#000082,plain]-^  AnotUBException
+Pixel                              "1" *-[#595959,plain]-> "punt\n1" Punt2D
+RegistreUsuariStepDefs             "1" *-[#595959,plain]-> "state\n1" WorldState
+SistemaStepDefs                    "1" *-[#595959,plain]-> "state\n1" WorldState
+Tasca                              "1" *-[#595959,plain]-> "dades\n*" DadaCompleta
+Tasca                              "1" *-[#595959,plain]-> "empresa\n1" Empresa
+Tasca                              "1" *-[#595959,plain]-> "especificacio\n1" EspecificacioTasca
+Tasca                               -[#595959,dashed]->  TipusDadaIncorrecteException       : "«create»"
+TascaAssignada                      -[#000082,plain]-^  EstatTasca
+TascaAssignada                      -[#595959,dashed]->  TascaCompletada                    : "«create»"
+TascaAssignada                      -[#595959,dashed]->  TascaNoDisponibleException         : "«create»"
+TascaCompletada                     -[#000082,plain]-^  EstatTasca
+TascaCompletada                     -[#595959,dashed]->  TascaJaCompletadaException         : "«create»"
+TascaDisponible                     -[#000082,plain]-^  EstatTasca
+TascaDisponible                     -[#595959,dashed]->  TascaAssignada                     : "«create»"
+TascaDisponible                     -[#595959,dashed]->  TascaNoAssignadaException          : "«create»"
+TascaImatges                        -[#595959,dashed]->  Imatge                             : "«create»"
+TascaImatges                        -[#000082,plain]-^  Tasca
+TascaJaCompletadaException          -[#000082,plain]-^  AnotUBException
+TascaJaExistentException            -[#000082,plain]-^  AnotUBException
+TascaNoAssignadaException           -[#000082,plain]-^  AnotUBException
+TascaNoDisponibleException          -[#000082,plain]-^  AnotUBException
+TascaNoExistentException            -[#000082,plain]-^  AnotUBException
+TasquesDisponiblesStepDefs         "1" *-[#595959,plain]-> "state\n1" WorldState
+TipusDadaIncorrecteException        -[#000082,plain]-^  AnotUBException
+Usuari                             "1" *-[#595959,plain]-> "contrasenya\n1" Contrassenya
+Usuari                              -[#595959,dashed]->  Contrassenya                       : "«create»"
+Usuari                             "1" *-[#595959,plain]-> "contacte\n1" InformacioContacte
+Usuari                              -[#595959,dashed]->  InformacioContacte                 : "«create»"
+WorldState                          -[#595959,dashed]->  AppContainer                       : "«create»"
+WorldState                         "1" *-[#595959,plain]-> "controlador\n1" Controlador
+@enduml
