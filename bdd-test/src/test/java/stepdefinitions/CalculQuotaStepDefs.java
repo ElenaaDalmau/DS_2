@@ -1,24 +1,26 @@
 package stepdefinitions;
 
-
-import edu.ub.ds2627.anotub.controlador.Controlador;
-import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import state.WorldState;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculQuotaStepDefs {
 
-    private final Controlador controlador = new Controlador();
-    private String resultat;
+    private final WorldState state;
+
+    public CalculQuotaStepDefs(WorldState state) {
+        this.state = state;
+    }
 
     @When("consulto la quota anual del tipus d'empresa {string}")
     public void consultoQuota(String tipusEmpresa) {
-        resultat = controlador.consultarQuotaEmpresa(tipusEmpresa);
+        state.setResultat(state.getControlador().consultarQuotaEmpresa(tipusEmpresa));
     }
 
     @Then("el resultat és {string}")
     public void comprovoResultat(String resultatEsperat) {
-        assertEquals(resultatEsperat, resultat);
+        assertEquals(resultatEsperat, state.getResultat());
     }
 }

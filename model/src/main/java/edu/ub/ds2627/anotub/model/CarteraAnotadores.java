@@ -34,4 +34,8 @@ public class CarteraAnotadores {
   public boolean eliminar(String nomUsuari) {
     return buscar(nomUsuari).map(anotadores::remove).orElse(false);
   }
+
+  public void afegirExpertesaAnotadora(String nomUsuari, String expertesa) throws AnotadoraNoExistentException {
+    obtenir(nomUsuari).afegirExpertesa(new Expertesa(expertesa));
+  }
 }

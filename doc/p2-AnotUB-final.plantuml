@@ -1,0 +1,193 @@
+@startuml
+
+top to bottom direction
+
+package controlador {
+  class AppContainer
+  class Controlador {
+    - anotUB: AnotUB
+    + registrarUsuari(...): String
+    + registrarEmpresa(...): String
+    + identificarUsuari(String, String): String
+    + publicarEspecificacio(String, List<String>, List<String>, List<String>, double): String
+    + registrarTascaImatges(String, String, String, LocalDate): String
+    + registrarTascaDocuments(String, String, String, LocalDate): String
+    + afegirImatgeTasca(String, String, int, int): String
+    + afegirDocumentTasca(String, String, String): String
+    + obtenirTasquesDisponibles(String): List<Map<String,String>>
+    + assignarTasca(String, String): String
+    + anotarEtiquetaGlobal(String, String, String, String): String
+    + anotarEtiquetaLocalitzacio(String, String, String, String): String
+    + marcarDadaAnotada(String, String, String): String
+    + consultarRemuneracio(String, List<String>): double
+    + consultarRemuneracioCompletades(String): double
+    + consultarQuotaEmpresa(String): String
+  }
+  enum MessagesCAT {
+    + translate(Exception): String
+  }
+}
+
+package model {
+  class AnotUB {
+    - margeBenefici: double
+  }
+  class CarteraAnotadores
+  class CarteraEmpreses
+  class CatalegEspecificacions
+  class CatalegTasques
+  class CatalegAssignacions
+
+  abstract class Usuari {
+    - nomUsuari: String
+    + contrasenyaCorrecta(String): boolean
+  }
+  class Contrassenya
+  class InformacioContacte {
+    - email: String
+    - telefon: String
+  }
+  class Anotadora {
+    + getExperteses(): List<Expertesa>
+    + afegirExpertesa(Expertesa): void
+  }
+  class Empresa {
+    - nom: String
+    - paisFiscal: String
+    - vat: String
+  }
+  class Passaport
+  class CompteBancari
+  class Expertesa
+
+  class EspecificacioTasca <<immutable>> {
+    - titol: String
+    - remuneracioPerDada: double
+    + requereix(Expertesa): boolean
+    + imposa(Categoria): boolean
+  }
+  class Instruccio {
+    - textInstruccio: String
+  }
+  class Categoria {
+    - nom: String
+  }
+  abstract class Tasca {
+    - id: String
+    - dataLimit: LocalDate
+    + afegirImatge(String, int, int): void
+    + afegirDocument(String, String): void
+    + anotarEtiqueta(String, Categoria): void
+    + anotarLocalitzacio(String, Categoria): void
+    + marcarDadaAnotada(String): void
+    + getRemuneracio(): double
+  }
+  class TascaImatges
+  class TascaDocuments
+  class Assignacio <<sol·licita>> {
+    + assignarA(Anotadora): void
+    + anotarEtiqueta(Anotadora, String, Categoria): void
+    + marcarDadaAnotada(Anotadora, String): void
+    + calcularRemuneracio(): double
+  }
+  abstract class EstatTasca {
+    + assignar(): EstatTasca
+    + completar(): EstatTasca
+  }
+  class TascaDisponible
+  class TascaAssignada
+  class TascaCompletada
+
+  abstract class Dada {
+    - anotada: boolean
+    + afegirEtiqueta(Categoria): void
+  }
+  abstract class DadaCompleta {
+    - titol: String
+  }
+  class Imatge {
+    - amplada: int
+    - alcada: int
+  }
+  class Document {
+    - text: String
+  }
+  class Regio {
+    - id: int
+  }
+  class Pixel {
+    - vermell: int
+    - verd: int
+    - blau: int
+  }
+  class Punt2D {
+    - x: int
+    - y: int
+  }
+
+  interface "TascaMap<T>" as TascaMap
+  class TDD_TascaMapping
+  class CalculQuotaEmpresa
+  enum TipusEmpresa {
+    PETITA(300)
+    MITJANA(700)
+    GRAN(1500)
+  }
+}
+
+AppContainer *--> Controlador
+AppContainer *--> AnotUB
+Controlador --> AnotUB
+Controlador ..> MessagesCAT
+Controlador ..> TDD_TascaMapping : «create»
+
+AnotUB *--> CarteraAnotadores
+AnotUB *--> CarteraEmpreses
+AnotUB *--> CatalegEspecificacions : publica
+AnotUB *--> CatalegTasques
+AnotUB *--> CatalegAssignacions
+AnotUB *--> CalculQuotaEmpresa
+CarteraAnotadores "1" *--> "*" Anotadora
+CarteraEmpreses "1" *--> "*" Empresa
+CatalegEspecificacions "1" *--> "*" EspecificacioTasca
+CatalegTasques "1" *--> "*" Tasca
+CatalegAssignacions "1" *--> "*" Assignacio
+
+Usuari <|-- Anotadora
+Usuari <|-- Empresa
+Usuari *--> "1" Contrassenya
+Usuari *--> "1" InformacioContacte
+Anotadora *--> "1" Passaport
+Anotadora *--> "1" CompteBancari
+Anotadora "*" --> "*" Expertesa : declara
+
+Tasca "1..*" --> "1" EspecificacioTasca : ésDescritaPer
+Tasca "1..*" --> "1" Empresa : enviadaPer
+Tasca <|-- TascaImatges
+Tasca <|-- TascaDocuments
+Tasca "1" *--> "*" DadaCompleta : involucra
+EspecificacioTasca "*" --> "*" Expertesa : requereix
+EspecificacioTasca "*" --> "*" Categoria : imposa
+EspecificacioTasca "1" *--> "*" Instruccio : conté
+
+Assignacio --> "1" Tasca
+Assignacio --> "0..1" Anotadora
+Assignacio --> "1" EstatTasca : esTrobaEn
+EstatTasca <|-- TascaDisponible
+EstatTasca <|-- TascaAssignada
+EstatTasca <|-- TascaCompletada
+
+Dada <|-- DadaCompleta
+Dada <|-- Regio
+DadaCompleta <|-- Imatge
+DadaCompleta <|-- Document
+Dada "*" --> "*" Categoria : anotadaAmb
+Imatge "1" *--> "1..*" Pixel : esComposaDe
+Pixel "1" --> "1" Punt2D : correspon
+Regio "*" --> "1" Punt2D : teOrigen
+Regio "*" --> "1" Punt2D : teFinal
+
+TascaMap <|.. TDD_TascaMapping
+Tasca ..> TascaMap
+CalculQuotaEmpresa ..> TipusEmpresa
+@enduml

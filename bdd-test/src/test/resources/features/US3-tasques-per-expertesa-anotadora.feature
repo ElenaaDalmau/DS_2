@@ -29,7 +29,7 @@ Feature: L’anotador ha de poder veure les tasques disponibles donada la seva e
       | 3       | Detecció fractures        | DadesMèdiques       |
       | 4       | Defectes aparelles electrònics         |    Electrònica                |
     When l’anotador "jane_doe" demana veure les tasques disponibles
-    Then el sistema mostra un missatge "No hi ha tasques disponibles per a l’anotador 'jane_doe' amb les seves experteses."
+    Then el sistema mostra un missatge "No hi ha tasques disponibles en el sistema."
 
   Scenario: No hi han tasques disponibles per anotar
     Given l'usuari "john_doe" està registrat amb la contrasenya "Password123"

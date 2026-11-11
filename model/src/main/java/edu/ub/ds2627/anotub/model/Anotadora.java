@@ -1,17 +1,15 @@
 package edu.ub.ds2627.anotub.model;
 
-import edu.ub.ds2627.anotub.model.excepcions.AtributFaltantException;
 import edu.ub.ds2627.anotub.model.excepcions.ContrasenyaNoSeguraException;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class Anotadora {
-  private final String nomUsuari;
-  private final Contrassenya contrasenya;
+public class Anotadora extends Usuari {
   private final Passaport passaport;
   private final CompteBancari compteBancari;
-  private final InformacioContacte contacte;
   private final List<Expertesa> experteses;
 
   public Anotadora(
@@ -28,6 +26,7 @@ public class Anotadora {
       String telefon,
       List<String> experteses
   ) throws ContrasenyaNoSeguraException {
+    super(nomUsuari, contrasenya, email, telefon);
     this.passaport = new Passaport(
         passaportNom,
         passaportCognoms,
@@ -36,19 +35,17 @@ public class Anotadora {
         passaportCaducitat
     );
     this.compteBancari = new CompteBancari(compteIban, compteSwift);
-    this.contacte = new InformacioContacte(email, telefon);
-
-    this.nomUsuari = nomUsuari;
-    this.contrasenya = new Contrassenya(contrasenya);
-    this.experteses = experteses.stream().map(Expertesa::new).toList();
+    this.experteses = new ArrayList<>(experteses.stream().map(Expertesa::new).toList());
   }
 
-  public String getNomUsuari() {
-    return nomUsuari;
+  public List<Expertesa> getExperteses() {
+    return Collections.unmodifiableList(experteses);
   }
 
-  public boolean contrasenyaCorrecta(String contrasenya) {
-    return this.contrasenya.equals(contrasenya);
+  // Expert: l'anotadora gestiona les seves pròpies experteses
+  public void afegirExpertesa(Expertesa expertesa) {
+    if (!experteses.contains(expertesa)) {
+      experteses.add(expertesa);
+    }
   }
-
 }

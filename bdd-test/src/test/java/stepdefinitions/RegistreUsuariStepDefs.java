@@ -76,7 +76,7 @@ public class RegistreUsuariStepDefs {
         "600123123",
         List.of("Java", "Bases de dades")
     );
-
+    state.setUsuariActual(nomUsuari);
   }
 
   private LocalDate parseData(String valor) {

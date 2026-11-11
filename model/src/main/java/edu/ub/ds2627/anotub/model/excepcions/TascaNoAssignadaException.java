@@ -1,0 +1,5 @@
+package edu.ub.ds2627.anotub.model.excepcions;
+
+public class TascaNoAssignadaException extends AnotUBException {
+
+}
