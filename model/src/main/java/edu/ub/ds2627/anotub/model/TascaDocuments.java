@@ -8,7 +8,6 @@ public class TascaDocuments extends Tasca {
         super(id, dataLimit, especificacio, empresa);
     }
 
-    // Creador: la tasca conté (involucra) els seus documents
     @Override
     public void afegirDocument(String titol, String text) {
         afegirDada(new Document(titol, text));

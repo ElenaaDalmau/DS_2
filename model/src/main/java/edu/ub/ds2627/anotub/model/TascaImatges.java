@@ -10,7 +10,6 @@ public class TascaImatges extends Tasca {
         super(id, dataLimit, especificacio, empresa);
     }
 
-    // Creador: la tasca conté (involucra) les seves imatges
     @Override
     public void afegirImatge(String titol, int amplada, int alcada) throws DimensionsImatgeNoValidesException {
         afegirDada(new Imatge(titol, amplada, alcada));

@@ -20,7 +20,6 @@ public class ConsultaRemuneracioTascaStepDefs {
   private static final String ESPECIFICACIO_REMUNERADA = "Anotació remunerada";
 
   private final WorldState state;
-  // Les dades fetes s'indiquen al When, per això les tasques es completen en aquell moment
   private final Set<String> tasquesACompletar = new LinkedHashSet<>();
   private double remuneracio;
   private List<String> tasquesRemunerades;

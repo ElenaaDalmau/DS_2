@@ -9,7 +9,6 @@ import edu.ub.ds2627.anotub.model.excepcions.TipusEtiquetaNoPermesaException;
 
 import java.util.List;
 
-// MD: relació "sol·licita" entre Anotadora i Tasca, de la qual depèn l'EstatTasca (patró State)
 public class Assignacio {
     private final Tasca tasca;
     private Anotadora anotadora;

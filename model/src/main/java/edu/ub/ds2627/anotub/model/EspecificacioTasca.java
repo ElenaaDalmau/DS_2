@@ -2,7 +2,6 @@ package edu.ub.ds2627.anotub.model;
 
 import java.util.List;
 
-// Part immutable i reutilitzable: una mateixa especificació descriu diverses tasques (variacions protegides)
 public class EspecificacioTasca {
     private final String titol;
     private final List<Expertesa> experteses;

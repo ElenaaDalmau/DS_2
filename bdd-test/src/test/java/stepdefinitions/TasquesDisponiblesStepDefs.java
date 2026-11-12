@@ -25,7 +25,6 @@ public class TasquesDisponiblesStepDefs {
         this.state = state;
     }
 
-    // Step per afegir expertesa a l'usuari actual registrat
     @And("té l'expertesa {string}")
     public void te_l_expertesa(String expertesa) {
         state.setResultat(state.getControlador().afegirExpertesaAnotador(state.getUsuariActual(), expertesa));

@@ -1,6 +1,6 @@
 package edu.ub.ds2627.anotub.model;
 
-// Localització d'objecte: caixa definida pels punts superior-esquerre i inferior-dret (US opcional)
+
 public class Regio extends Dada {
     private final int id;
     private final Punt2D origen;

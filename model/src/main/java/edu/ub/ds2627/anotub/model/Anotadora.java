@@ -42,7 +42,6 @@ public class Anotadora extends Usuari {
     return Collections.unmodifiableList(experteses);
   }
 
-  // Expert: l'anotadora gestiona les seves pròpies experteses
   public void afegirExpertesa(Expertesa expertesa) {
     if (!experteses.contains(expertesa)) {
       experteses.add(expertesa);

@@ -10,7 +10,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-// Cada oferta concreta d'una especificació, amb el seu conjunt de dades i data límit
 public abstract class Tasca {
     private final String id;
     private final LocalDate dataLimit;
@@ -42,7 +41,6 @@ public abstract class Tasca {
         return empresa;
     }
 
-    // Cada subclasse només accepta el seu tipus de dada (una tasca, un únic tipus)
     public void afegirImatge(String titol, int amplada, int alcada)
             throws TipusDadaIncorrecteException, DimensionsImatgeNoValidesException {
         throw new TipusDadaIncorrecteException();
@@ -72,7 +70,6 @@ public abstract class Tasca {
                 .orElseThrow(DadaNoExistentException::new);
     }
 
-    // Les categories vénen imposades per l'especificació
     public void anotarEtiqueta(String titolDada, Categoria categoria)
             throws CategoriaNoPermesaException, DadaNoExistentException {
         if (!especificacio.imposa(categoria)) {
@@ -81,7 +78,6 @@ public abstract class Tasca {
         obtenirDada(titolDada).afegirEtiqueta(categoria);
     }
 
-    // Les localitzacions d'objecte (US opcional) no s'implementen; TascaImatges la podria sobreescriure (OCP)
     public void anotarLocalitzacio(String titolDada, Categoria categoria) throws TipusEtiquetaNoPermesaException {
         throw new TipusEtiquetaNoPermesaException();
     }
@@ -98,7 +94,6 @@ public abstract class Tasca {
         return dades.stream().filter(dada -> !dada.isAnotada()).toList();
     }
 
-    // Atribut derivat del MD: /remuneració = remuneració per dada x nombre de dades
     public double getRemuneracio() {
         return especificacio.getRemuneracioPerDada() * dades.size();
     }

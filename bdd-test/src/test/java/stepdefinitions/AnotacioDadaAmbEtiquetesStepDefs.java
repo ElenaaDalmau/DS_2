@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AnotacioDadaAmbEtiquetesStepDefs {
-  // Conjunt de categories que imposa l'especificació de la tasca dels escenaris
+
   private static final List<String> CATEGORIES_IMPOSADES = List.of(
       "Planeta Vermell", "Postimpressionisme", "Oleo", "Dibuix net", "Pulcre", "Porta Tori", "Us de goma");
 

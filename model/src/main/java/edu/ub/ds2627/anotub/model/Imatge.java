@@ -19,7 +19,7 @@ public class Imatge extends DadaCompleta {
         this.amplada = amplada;
         this.alcada = alcada;
         this.pixels = new ArrayList<>();
-        // Creador: la imatge es composa dels seus píxels
+
         for (int y = 0; y < alcada; y++) {
             for (int x = 0; x < amplada; x++) {
                 pixels.add(new Pixel(new Punt2D(x, y), 0, 0, 0));

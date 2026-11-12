@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-// MD: qualsevol cosa anotable amb categories (dades completes o regions)
 public abstract class Dada {
 
     private boolean anotada;
